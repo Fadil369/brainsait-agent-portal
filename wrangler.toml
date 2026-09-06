@@ -1,0 +1,35 @@
+name = "brainsait-agent-portal"
+main = "src/index.ts"
+compatibility_date = "2026-09-06"
+compatibility_flags = ["nodejs_compat"]
+account_id = "d7b99530559ab4f2545e9bdc72a7ab9b"
+workers_dev = true
+
+routes = [
+  { pattern = "copilot.brainsait.org", custom_domain = true }
+]
+
+[ai]
+binding = "AI"
+remote = true
+
+[[ai_search_namespaces]]
+binding = "AI_SEARCH"
+namespace = "default"
+remote = true
+
+[[d1_databases]]
+binding = "HIS_DB"
+database_name = "his_database"
+database_id = "f79d9487-fd6e-45e0-aaf1-ea9f2a69493d"
+
+[[analytics_engine_datasets]]
+binding = "WAE"
+dataset = "agent_portal_analytics"
+
+[[kv_namespaces]]
+binding = "SESSIONS_KV"
+id = "b44cf126a9334ae09bbf31e970fef589"
+
+[observability]
+enabled = true
